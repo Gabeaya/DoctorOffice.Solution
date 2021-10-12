@@ -12,9 +12,10 @@
   <h3>No patients have been added yet!</h3>
 } 
 
-@foreach (Patient Patient in Model)
+@foreach (Patient patient in Model)
 {
-  <li>@Html.ActionLink($"{patient.Description}", "Details", new { id = patient.PatientId })</li>
+  <li>@Html.ActionLink($"{patient.Name}", "Details", new { id = patient.PatientId })</li>
 }
 
 <p>@Html.ActionLink("Add new patient", "Create")</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>
