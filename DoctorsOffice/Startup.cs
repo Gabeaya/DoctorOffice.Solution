@@ -43,7 +43,7 @@ namespace DoctorsOffice
       
       app.Run(async (context) =>
       {
-        await context.Response.WriteAsync("Page not founm!");
+        await context.Response.WriteAsync("Page not found!");
       });
     }
   }

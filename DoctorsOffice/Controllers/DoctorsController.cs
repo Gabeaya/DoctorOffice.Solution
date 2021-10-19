@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using DoctorsOffice.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -21,16 +22,19 @@ namespace DoctorsOffice.Controllers
       return View(model);
     }
 
+    [HttpGet]
     public ActionResult Create()
     {
+      ViewBag.SpecialtyId = new SelectList(_db.Specialties, "SpecialtyId", "Name");
       return View();
     }
 
     [HttpPost]
-    public ActionResult Create(Doctor doctor)
+    public ActionResult Create(Doctor doctor, int SpecialtyId)
     {
       _db.Doctors.Add(doctor);
       _db.SaveChanges();
+      
       return RedirectToAction("Index");
     }
 

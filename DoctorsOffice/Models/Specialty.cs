@@ -6,12 +6,15 @@ namespace DoctorsOffice.Models
     {
         public Specialty()
         {
-            this.JoinEntities = new HashSet<DoctorSpecialty>();
+            this.JoinEntities3 = new HashSet<DoctorSpecialty>();
+            this.JoinEntities2 = new HashSet<SpecialtyPatient>();
         }
 
         public int SpecialtyId { get; set; }
         public string Name { get; set; }
 
-        public virtual ICollection<DoctorSpecialty> JoinEntities { get;}
+
+        public virtual ICollection<DoctorSpecialty> JoinEntities3 { get; set; }
+        public virtual ICollection<SpecialtyPatient> JoinEntities2 { get; set; }
     }
 }
